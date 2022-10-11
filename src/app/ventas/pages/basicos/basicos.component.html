@@ -5,13 +5,75 @@
 
 <div class="grid">
   <div class="col-4">
-    <p-card header="Uppercase"></p-card>
+    <p-card header="upperCase" [subheader]="nombreLower">
+      <!-- para pasarlo a mayúsculas -->
+      <p>Resultado de upperCase: {{ nombreLower | uppercase }}</p>
+    </p-card>
   </div>
 
   <div class="col-4">
-    <p-card>x</p-card>
+    <p-card header="lowerCase" [subheader]="nombreUpper">
+      <!-- para pasarlo a mayúsculas -->
+      <p>Resultado de lowerCase: {{ nombreUpper | lowercase }}</p>
+    </p-card>
   </div>
   <div class="col-4">
-    <p-card>x</p-card>
+    <p-card header="titleCase" [subheader]="nombreCompleto">
+      <!-- para pasarlo a mayúsculas -->
+      <p>Resultado de titleCase: {{ nombreCompleto | titlecase }}</p>
+    </p-card>
+  </div>
+</div>
+
+<div class="color-texto">
+  <h1>Date | fecha | Pipe</h1>
+  <p>Pipes para mostrar fechas.</p>
+</div>
+
+<div class="grid">
+  <div class="col-6">
+    <p-card>
+      <ul>
+        <li>Fecha</li>
+        <li>Fecha | Date</li>
+        <li>Fecha | Date: "short"</li>
+        <li>Fecha | Date: "long"</li>
+        <li>Fecha | Date: "cccc hh:mm:SSS aaaa OOOO G"</li>
+      </ul>
+
+      <hr />
+
+      <ul>
+        <li>fecha | date: "long":"GMT-6":"es-MX"</li>
+        <li>fecha | date: "long":"GMT-6":"en-US"</li>
+        <li>fecha | date: "long":"GMT-6":"fr"</li>
+      </ul>
+    </p-card>
+  </div>
+
+  <div class="col-6">
+    <p-card>
+      <ul>
+        <li>{{ fecha }}</li>
+        <li>{{ fecha | date }}</li>
+        <li>{{ fecha | date: "short" }}</li>
+        <li>{{ fecha | date: "long" }}</li>
+        <li>{{ fecha | date: "cccc hh:mm:SSS aaaa OOOO G" }}</li>
+      </ul>
+
+      <hr />
+
+      <ul>
+        <li>
+          {{ fecha | date: "long":"GMT-6":"es-MX" }}
+        </li>
+        <li>
+          {{ fecha | date: "long":"GMT-6":"en-US" }}
+        </li>
+        <li>
+          {{ fecha | date: "long":"GMT-6":"fr" }}
+        </li>
+      </ul>
+    </p-card>
   </div>
 </div>
